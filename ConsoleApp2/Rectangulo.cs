@@ -1,27 +1,54 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace ConsoleApp2
 {
-    internal class Rectangulo
+    public class Rectangulo
     {
-        
-        public int Base { get; set; }
-        public int Altura { get; set; }
+        public Double Base { get; set; }
+        public Double Altura { get; set; }
 
-        
-        public int CalcularArea()
+        public Coordenada coordenada01 { get; set; }
+
+        public Coordenada coordenada02 { get; set; }
+
+        public Coordenada coordenada03 { get; set; }
+
+        public Coordenada coordenada04 { get; set; }
+
+
+        public void CalcularBase()
+        {
+            Base = Math.Sqrt(Math.Pow(coordenada02.X-coordenada01.X, 2) + Math.Pow(coordenada02.Y-coordenada01.Y,2));
+       
+        }
+
+        public void CalcularAltura()
+        {
+ 
+
+            Altura = Math.Sqrt(Math.Pow(coordenada04.X - coordenada01.X, 2) + Math.Pow(coordenada04.Y - coordenada01.Y, 2));
+
+
+        }
+
+        public double CalcularArea()
         {
             return Base * Altura;
         }
 
-        public int CalcularPerimetro()
+        public double CalcularPerimetro()
         {
-            return (Base + Altura) * 2;
+            return (Base + Altura) *2 ;
         }
+
+
+
+
 
     }
 }

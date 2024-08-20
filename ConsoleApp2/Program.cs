@@ -10,40 +10,32 @@ namespace ConsoleApp2
     {
         static void Main(string[] args)
         {
-            /*
-            int area = 0;
-            int perimetro = 0;
-         
-            Rectangulo rectangulo = new Rectangulo();
 
-            rectangulo.Base = 10;
-            rectangulo.Altura = 20;
-            
-            area = rectangulo.CalcularArea();
-            perimetro = rectangulo.CalcularPerimetro();
+            Coordenada coordenada01 = new Coordenada { X = 0, Y  = 8};
+            Coordenada coordenada02 = new Coordenada { X = 4, Y = 8 };
+            Coordenada coordenada03 = new Coordenada { X = 4, Y = 0 };
+            Coordenada coordenada04 = new Coordenada { X = 0, Y = 0 };
 
-            Console.WriteLine("El área es:");
-            Console.WriteLine(area);
-            Console.WriteLine("El perímetro es:");
-            Console.WriteLine(perimetro);
-            */
-
-            string nombreCompleto = "" ;
-
-            Persona persona = new Persona
+            Rectangulo rectangulo = new Rectangulo
             {
-                Nombres = "Sebastian",
-                Apellidos = "Beteta",
+                coordenada01 = coordenada01,
 
+                coordenada02 = coordenada02,
+
+                coordenada03 = coordenada03,
+
+                coordenada04 = coordenada04
+            
             };
-      
-            persona.AsignarNombresCompletos();
+
+            rectangulo.CalcularBase();
+            rectangulo.CalcularAltura();
 
 
-            Console.WriteLine(persona.NombresCompletos);
+            Console.WriteLine("El área es: " + rectangulo.CalcularArea());
+            Console.WriteLine("El perímetro es :" + rectangulo.CalcularPerimetro());
 
             Console.Read();
-
 
 
         }
